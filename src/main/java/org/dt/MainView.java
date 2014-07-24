@@ -2,9 +2,8 @@ package org.dt;
 
 import org.dt.domain.DeviceUser;
 
-import com.vaadin.addon.touchkit.extensions.TouchKitIcon;
 import com.vaadin.addon.touchkit.ui.TabBarView;
-import com.vaadin.ui.AbstractComponent;
+import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.TabSheet.Tab;
 
 public class MainView extends TabBarView {
@@ -13,17 +12,16 @@ public class MainView extends TabBarView {
 
     public MainView() {
         Tab t = addTab(new DeviceListView());
-        // t.setIcon(new ThemeResource("../dt/device-icon.png"));
-        TouchKitIcon.tablet.addTo(t);
+        t.setIcon(FontAwesome.TABLET);
+
         t = addTab(loanHistoryView);
-        // t.setIcon(new ThemeResource("../dt/loans-icon.png"));
-        TouchKitIcon.book.addTo(t);
+        t.setIcon(FontAwesome.BOOK);
+
         t = addTab(new MapView());
-        TouchKitIcon.globe.addTo(t);
-        // t.setIcon(new ThemeResource("../dt/world-icon.png"));
+        t.setIcon(FontAwesome.GLOBE);
+
         t = addTab(new MyDetailsView());
-        // t.setIcon(new ThemeResource("../dt/user-icon.png"));
-        TouchKitIcon.user.addTo(t);
+        t.setIcon(FontAwesome.USER);
     }
 
     /**

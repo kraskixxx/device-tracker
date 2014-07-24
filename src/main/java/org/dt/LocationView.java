@@ -10,12 +10,12 @@ import org.dt.domain.Device;
 import org.dt.domain.DeviceGroup;
 import org.dt.domain.Location;
 
-import com.vaadin.addon.touchkit.extensions.TouchKitIcon;
 import com.vaadin.addon.touchkit.ui.NavigationButton;
 import com.vaadin.addon.touchkit.ui.NavigationButton.NavigationButtonClickEvent;
 import com.vaadin.addon.touchkit.ui.NavigationButton.NavigationButtonClickListener;
 import com.vaadin.addon.touchkit.ui.NavigationView;
 import com.vaadin.addon.touchkit.ui.VerticalComponentGroup;
+import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
@@ -46,7 +46,7 @@ public class LocationView extends NavigationView implements Component,
 
         VerticalComponentGroup verticalComponentGroup = new VerticalComponentGroup();
         NavigationButton nb = new NavigationButton("Location details");
-        TouchKitIcon.cogs.addTo(nb);
+        nb.setIcon(FontAwesome.COGS);
         nb.addClickListener(new NavigationButtonClickListener() {
             @Override
             public void buttonClick(NavigationButtonClickEvent event) {
@@ -155,7 +155,7 @@ public class LocationView extends NavigationView implements Component,
 
     public void updateLocation() {
         setCaption(location.getName());
-        if(isConnectorEnabled()) {
+        if (isConnectorEnabled()) {
             parent.updateLocation(location);
         }
     }
