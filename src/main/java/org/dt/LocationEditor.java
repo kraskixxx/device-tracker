@@ -5,7 +5,6 @@ import org.dt.domain.Location;
 import org.dt.util.BeanBinder;
 
 import com.vaadin.addon.jpacontainer.fieldfactory.SingleSelectConverter;
-import com.vaadin.addon.touchkit.extensions.TouchKitIcon;
 import com.vaadin.addon.touchkit.ui.HorizontalButtonGroup;
 import com.vaadin.addon.touchkit.ui.NavigationView;
 import com.vaadin.addon.touchkit.ui.VerticalComponentGroup;
@@ -13,6 +12,7 @@ import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.event.FieldEvents.TextChangeEvent;
 import com.vaadin.event.FieldEvents.TextChangeListener;
+import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.AbstractField;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -56,7 +56,7 @@ public class LocationEditor extends NavigationView implements ClickListener,
         verticalComponentGroup.addComponent(setLocationFromMap);
         setContent(verticalComponentGroup);
 
-        TouchKitIcon.user.addTo(responsible);
+        responsible.setIcon(FontAwesome.USER);
         responsible.setContainerDataSource(DeviceTracker.get()
                 .getUserContainer());
         responsible.setConverter(new SingleSelectConverter<DeviceUser>(
