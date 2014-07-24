@@ -34,7 +34,8 @@ public class LocationEditor extends NavigationView implements ClickListener,
     private Button ok = new Button("Save", this);
     private Button cancel = new Button("Cancel", this);
 
-    private Button setLocationFromMap = new Button("Define location from map", this);
+    private Button setLocationFromMap = new Button("Define location from map",
+            this);
 
     private HorizontalButtonGroup editButtons;
 
@@ -84,7 +85,7 @@ public class LocationEditor extends NavigationView implements ClickListener,
     @Override
     public void buttonClick(ClickEvent event) {
         if (event.getButton() == setLocationFromMap) {
-            getUI().addWindow(new LocationPicker(lon,lat));
+            getUI().addWindow(new LocationPicker(lon, lat));
             return;
         }
         if (event.getButton() == ok) {

@@ -155,7 +155,7 @@ public class LocationView extends NavigationView implements Component,
 
     public void updateLocation() {
         setCaption(location.getName());
-        if(isConnectorEnabled()) {
+        if (isConnectorEnabled()) {
             parent.updateLocation(location);
         }
     }
